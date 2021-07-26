@@ -46,7 +46,9 @@ class UserDashboardController extends Controller
             'contact_time' => ['required', 'string']
         ]);
 
-        auth()->user()->update([
+        $user = User::findOrFail(auth()->user()->id);
+
+        $user->update([
             'wilaya' => $request->wilaya,
             'commune' => $request->commune,
             'blood_type' => $request->blood_type,
@@ -94,6 +96,5 @@ class UserDashboardController extends Controller
         ]);
 
         return response()->json(['success' => 'Your password updated successfully']);
-       //return back()->with('success', 'Your password updated successfully');
     }
 }
