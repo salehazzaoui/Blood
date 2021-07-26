@@ -73,7 +73,7 @@
             </div>
           </nav>
           <section class="p-4">
-            <div class="container my-3">
+            <div class="container my-3 position-relative" style="top: 50px !important;">
               @include('inc.message')
             </div>
           </section>
