@@ -21,7 +21,7 @@ class ChatController extends Controller
 
         switch($donor->contact_time){
             case 'From 8am to 3pm':
-                if(time() >= strtotime("08:00:00") && time() <= strtotime("18:00:00")){
+                if(time() >= strtotime("08:00:00") && time() <= strtotime("15:00:00")){
                     return back()->with('error', 'You are not able to contact him at this time');   
                 }
                 break;
